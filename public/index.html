@@ -2,37 +2,66 @@
 <html>
   <head>
     <title>Prompt Midjourney</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+    <script src="/scripts/script.js"></script>
   </head>
   <body>
     <div class="container">
       <h1>Prompt Midjourney</h1>
-      <input type="text" placeholder="What do you want to see?" id="inputBox">
-      <br>
+      <input id="promptInput" type="text" placeholder="What do you want to see?" />
       <button onclick="generatePrompt()">Generate Prompt</button>
-      <br>
-      <br>
-      <h3>Styles</h3>
-      <div id="styles"></div>
-      <br>
-      <h3>Artists</h3>
-      <div id="artists"></div>
-      <br>
-      <h3>Colors</h3>
-      <div id="colors"></div>
-      <br>
-      <h3>Materials</h3>
-      <div id="materials"></div>
-      <br>
-      <h3>Quality</h3>
-      <div id="quality"></div>
-      <br>
-      <h3>Stylize</h3>
-      <div id="stylize"></div>
-      <br>
-      <h3>Final Prompt</h3>
-      <div id="finalPrompt"></div>
-    </div>
+      <div id="styles" class="option">
+        <h2>Styles</h2>
+        <div class="slider-wrapper">
+          <h4>16-Bit</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+        <div class="slider-wrapper">
+          <h4>1800s</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+        <div class="slider-wrapper">
+          <h4>1980s</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+        <div class="slider-wrapper">
+          <h4>Antimatter</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+        <div class="slider-wrapper">
+          <h4>Black Hole</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+      </div>
+      <div id="artists" class="option">
+        <h2>Artists</h2>
+        <div>
+          <label><input type="radio" name="artist" value="1" checked /> Artist 1</label>
+        </div>
+        <div>
+          <label><input type="radio" name="artist" value="2" /> Artist 2</label>
+        </div>
+        <div>
+          <label><input type="radio" name="artist" value="3" /> Artist 3</label>
+        </div>
+      </div>
+      <div id="colors" class="option">
+        <h2>Colors</h2>
+        <div class="slider-wrapper">
+          <h4>Blue</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+        <div class="slider-wrapper">
+          <h4>Green</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+        <div class="slider-wrapper">
+          <h4>Red</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
+        <div class="slider-wrapper">
+          <h4>Yellow</h4>
+          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
+        </div>
   </body>
 </html>
