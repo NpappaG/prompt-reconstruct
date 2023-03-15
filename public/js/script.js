@@ -1,95 +1,46 @@
-// Get elements
-const input = document.querySelector("#input");
-const generateBtn = document.querySelector("#generate-btn");
-const finalPrompt = document.querySelector("#final-prompt");
-const styleSliders = document.querySelector(".style-sliders");
-const lightingSliders = document.querySelector(".lighting-sliders");
-const cameraSliders = document.querySelector(".camera-sliders");
-const artistsSliders = document.querySelector(".artists-sliders");
-const colorsSliders = document.querySelector(".colors-sliders");
-const qualitySliders = document.querySelector(".quality-sliders");
-const stylizeSliders = document.querySelector(".stylize-sliders");
+// define variables
+const generateBtn = document.getElementById('generate-btn');
+const inputField = document.getElementById('input-field');
+const finalPrompt = document.getElementById('final-prompt');
 
-// Update final prompt text
-function updateFinalPrompt() {
-  let promptText = input.value;
-  
-  promptText += styleSliders.querySelector("output").textContent;
-  promptText += lightingSliders.querySelector("output").textContent;
-  promptText += cameraSliders.querySelector("output").textContent;
-  promptText += artistsSliders.querySelector("output").textContent;
-  promptText += colorsSliders.querySelector("output").textContent;
-  promptText += qualitySliders.querySelector("output").textContent;
-  promptText += stylizeSliders.querySelector("output").textContent;
+// define function to generate prompt
+function generatePrompt() {
+  const inputText = inputField.value;
+  let promptText = inputText;
 
-  finalPrompt.textContent = promptText;
+  // add styles
+  const styleCards = document.querySelectorAll('.styles .card');
+  styleCards.forEach(card => {
+    const slider = card.querySelector('input[type="range"]');
+    const value = slider.value;
+    const styleName = card.querySelector('.card-title').innerText;
+    if (value != 1) {
+      promptText += `::${styleName}::${value}`;
+    }
+  });
+
+  // add artists
+  const artistCards = document.querySelectorAll('.artists .card');
+  artistCards.forEach(card => {
+    const artistName = card.querySelector('.card-title').innerText;
+    if (card.querySelector('input[type="checkbox"]').checked) {
+      promptText += `::${artistName}`;
+    }
+  });
+
+  // add colors
+  const colorCards = document.querySelectorAll('.colors .card');
+  colorCards.forEach(card => {
+    const slider = card.querySelector('input[type="range"]');
+    const value = slider.value;
+    const colorName = card.querySelector('.card-title').innerText;
+    if (value != 1) {
+      promptText += `::${colorName}::${value}`;
+    }
+  });
+
+  finalPrompt.innerText = promptText;
 }
 
-// Add event listeners to sliders
-styleSliders.querySelectorAll("input[type='range']").forEach((slider) => {
-  slider.addEventListener("input", () => {
-    const output = slider.parentElement.querySelector("output");
-    output.textContent = slider.value;
-    updateFinalPrompt();
-  });
-});
-
-lightingSliders.querySelectorAll("input[type='range']").forEach((slider) => {
-  slider.addEventListener("input", () => {
-    const output = slider.parentElement.querySelector("output");
-    output.textContent = slider.value;
-    updateFinalPrompt();
-  });
-});
-
-cameraSliders.querySelectorAll("input[type='range']").forEach((slider) => {
-  slider.addEventListener("input", () => {
-    const output = slider.parentElement.querySelector("output");
-    output.textContent = slider.value;
-    updateFinalPrompt();
-  });
-});
-
-artistsSliders.querySelectorAll("input[type='range']").forEach((slider) => {
-  slider.addEventListener("input", () => {
-    const output = slider.parentElement.querySelector("output");
-    output.textContent = slider.value;
-    updateFinalPrompt();
-  });
-});
-
-colorsSliders.querySelectorAll("input[type='range']").forEach((slider) => {
-  slider.addEventListener("input", () => {
-    const output = slider.parentElement.querySelector("output");
-    output.textContent = slider.value;
-    updateFinalPrompt();
-  });
-});
-
-qualitySliders.querySelectorAll("input[type='range']").forEach((slider) => {
-  slider.addEventListener("input", () => {
-    const output = slider.parentElement.querySelector("output");
-    output.textContent = slider.value;
-    updateFinalPrompt();
-  });
-});
-
-stylizeSliders.querySelectorAll("input[type='range']").forEach((slider) => {
-  slider.addEventListener("input", () => {
-    const output = slider.parentElement.querySelector("output");
-    output.textContent = slider.value;
-    updateFinalPrompt();
-  });
-});
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", () => {
-  updateFinalPrompt();
-});
-
-// Add event listener to Colors button
-const colorsBtn = document.querySelector(".colors-btn");
-
-colorsBtn.addEventListener("click", () => {
-  colorsSliders.classList.toggle("hidden");
-});
+// add event listener to generate button
+generateBtn.addEventListener('click', generatePrompt);
