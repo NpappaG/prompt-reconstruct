@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Prompt Midjourney</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Prompt Midjourney</h1>
+    </div>
+    <div class="prompt">
+      <label for="prompt-input">What do you want to see?</label>
+      <input type="text" id="prompt-input" placeholder="Enter your prompt here">
+      <button id="generate-button">Generate Prompt</button>
+      <div class="final-prompt"></div>
+    </div>
+    <div class="options">
+      <div class="option">
+        <button id="styles-button">Styles</button>
+        <div id="styles-options" class="options-slider">
+          <div class="option-slider">
+            <img src="./assets/16-bit.png" alt="16-bit">
+            <div class="slider-wrapper">
+              <span class="slider-label">16-Bit</span>
+              <input type="range" min="-0.7" max="5" step="0.1" value="1" class="slider" id="16-bit-slider">
+              <span class="slider-value" id="16-bit-slider-value">1</span>
+            </div>
+          </div>
+          <div class="option-slider">
+            <img src="./assets/1800s.png" alt="1800s">
+            <div class="slider-wrapper">
+              <span class="slider-label">1800s</span>
+              <input type="range" min="-0.7" max="5" step="0.1" value="1" class="slider" id="1800s-slider">
+              <span class="slider-value" id="1800s-slider-value">1</span>
+            </div>
+          </div>
+          <div class="option-slider">
+            <img src="./assets/1980s.png" alt="1980s">
+            <div class="slider-wrapper">
+              <span class="slider-label">1980s</span>
+              <input type="range" min="-0.7" max="5" step="0.1" value="1" class="slider" id="1980s-slider">
+              <span class="slider-value" id="1980s-slider-value">1</span>
+            </div>
+          </div>
+          <div class="option-slider">
+            <img src="./assets/antimatter.png" alt="Antimatter">
+            <div class="slider-wrapper">
+              <span class="slider-label">Antimatter</span>
+              <input type="range" min="-0.7" max="5" step="0.1" value="1" class="slider" id="antimatter-slider">
+              <span class="slider-value" id="antimatter-slider-value">1</span>
+            </div>
+          </div>
+          <div class="option-slider">
+            <img src="./assets/blackhole.png" alt="Black Hole">
+            <div class="slider-wrapper">
+              <span class="slider-label">Black Hole</span>
+              <input type="range" min="-0.7" max="5" step="0.1" value="1" class="slider" id="blackhole-slider">
+              <span class="slider-value" id="blackhole-slider-value">1</span>
+            </div>
+          </div>
+        </div>
+      </div>
