@@ -22,3 +22,10 @@ app.post('/update', (req, res) => {
 // Start the server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+// Add event listeners to sliders
+document.getElementById("styles-slider").addEventListener("input", updateFinalPrompt);
+document.getElementById("artists-slider").addEventListener("input", updateFinalPrompt);
+document.getElementById("colors-slider").addEventListener("input", updateFinalPrompt);
+document.getElementById("lighting-slider").addEventListener("input", updateFinalPrompt);
+document.getElementById("quality-slider").addEventListener("input", updateFinalPrompt);

@@ -13,59 +13,66 @@
       <h1>Prompt Midjourney</h1>
       <input id="promptInput" type="text" placeholder="What do you want to see?" />
       <button onclick="generatePrompt()">Generate Prompt</button>
-      <div id="styles" class="option">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#styles">Styles</button>
-        <div class="slider-wrapper">
-          <h4>16-Bit</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" onchange="updateFinalPrompt()"/>
+      <div class="row">
+        <div class="col">
+          <textarea id="input-field" class="form-control" rows="5"></textarea>
+          <button id="generate-btn" class="btn btn-primary">Generate Prompt</button>
         </div>
-        <div class="slider-wrapper">
-          <h4>1800s</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" onchange="updateFinalPrompt()"/>
+      <div class="col-md-12">
+        <h3>Final Prompt:</h3>
+        <div id="final-prompt"></div>
+      </div>    
+      <div class="container-fluid">
+        <div class="row mt-5">
+          <div class="col-sm-4 styles">
+            <h3>Styles</h3>
+            <button id="styles-btn" class="btn btn-secondary">Styles</button>
+            <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title">Style 1</h5>
+                <input type="range" min="1" max="10" value="1" class="slider">
+              </div>
+            </div>
+            <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title">Style 2</h5>
+                <input type="range" min="1" max="10" value="1" class="slider">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 artists">
+            <h3>Artists</h3>
+            <button id="artists-btn" class="btn btn-secondary">Artists</button>
+            <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title">Artist 1</h5>
+                <input type="checkbox" class="checkbox">
+              </div>
+            </div>
+            <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title">Artist 2</h5>
+                <input type="checkbox" class="checkbox">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4 colors">
+            <h3>Colors</h3>
+            <button id="colors-btn" class="btn btn-secondary">Colors</button>
+            <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title">Color 1</h5>
+                <input type="range" min="1" max="10" value="1" class="slider">
+              </div>
+            </div>
+            <div class="card mt-3">
+              <div class="card-body">
+                <h5 class="card-title">Color 2</h5>
+                <input type="range" min="1" max="10" value="1" class="slider">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="slider-wrapper">
-          <h4>1980s</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" onchange="updateFinalPrompt()"/>
-        </div>
-        <div class="slider-wrapper">
-          <h4>Antimatter</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" onchange="updateFinalPrompt()"/>
-        </div>
-        <div class="slider-wrapper">
-          <h4>Black Hole</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" onchange="updateFinalPrompt()"/>
-        </div>
-      </div>
-      <div id="artists" class="option">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#artists">Artists</button>
-        <div>
-          <label><input type="radio" name="artist" value="1" checked /> Artist 1</label>
-        </div>
-        <div>
-          <label><input type="radio" name="artist" value="2" /> Artist 2</label>
-        </div>
-        <div>
-          <label><input type="radio" name="artist" value="3" /> Artist 3</label>
-        </div>
-      </div>
-      <div id="colors" class="option">
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#colors">Colors</button>
-        <div class="slider-wrapper">
-          <h4>Blue</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
-        </div>
-        <div class="slider-wrapper">
-          <h4>Green</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
-        </div>
-        <div class="slider-wrapper">
-          <h4>Red</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
-        </div>
-        <div class="slider-wrapper">
-          <h4>Yellow</h4>
-          <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
-        </div>
-      </div>>
+      </div>      
   </body>
 </html>
