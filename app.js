@@ -1,16 +1,24 @@
 const express = require('express');
+const path = require('path');
+
 const app = express();
 
-// Set up static files
+// Serve static files from the public directory
 app.use(express.static('public'));
 
-// Set up routes
+// Handle GET request to the root URL
 app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: __dirname });
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Start server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+// Handle POST request to the /update URL
+app.post('/update', (req, res) => {
+  // Call the updateFinalPrompt() function here
+  updateFinalPrompt();
+  // Send a response indicating that the update was successful
+  res.send('Prompt updated successfully');
 });
+
+// Start the server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

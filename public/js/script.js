@@ -41,6 +41,17 @@ function generatePrompt() {
 
   finalPrompt.innerText = promptText;
 }
+function updateFinalPrompt() {
+  const promptText = inputField.value;
+  const stylesValue = document.getElementById("styles-slider").value;
+  const artistsValue = document.getElementById("artists-slider").value;
+  const colorsValue = document.getElementById("colors-slider").value;
+  const lightingValue = document.getElementById("lighting-slider").value;
+  const qualityValue = document.getElementById("quality-slider").value;
+
+  const finalPromptText = `${promptText} :: styles:${stylesValue} artists:${artistsValue} colors:${colorsValue} lighting:${lightingValue} quality:${qualityValue}`;
+  finalPrompt.innerText = finalPromptText;
+}
 
 // add event listener to generate button
 generateBtn.addEventListener('click', generatePrompt);
