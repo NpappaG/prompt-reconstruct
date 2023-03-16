@@ -14,7 +14,7 @@
       <input id="promptInput" type="text" placeholder="What do you want to see?" />
       <button onclick="generatePrompt()">Generate Prompt</button>
       <div id="styles" class="option">
-        <h2>Styles</h2>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#styles">Styles</button>
         <div class="slider-wrapper">
           <h4>16-Bit</h4>
           <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" onchange="updateFinalPrompt()"/>
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div id="artists" class="option">
-        <h2>Artists</h2>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#artists">Artists</button>
         <div>
           <label><input type="radio" name="artist" value="1" checked /> Artist 1</label>
         </div>
@@ -49,7 +49,7 @@
         </div>
       </div>
       <div id="colors" class="option">
-        <h2>Colors</h2>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#colors">Colors</button>
         <div class="slider-wrapper">
           <h4>Blue</h4>
           <input type="range" min="-0.7" max="5" step="0.01" value="1" class="slider" />
