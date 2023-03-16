@@ -44,15 +44,3 @@ function generatePrompt() {
 
 // add event listener to generate button
 generateBtn.addEventListener('click', generatePrompt);
-
-function updateFinalPrompt() {
-  let finalPrompt = document.getElementById("final-prompt");
-  let promptText = document.getElementById("prompt-text").value;
-  let stylesValue = document.getElementById("styles-slider").value;
-  let artistsValue = document.getElementById("artists-slider").value;
-  let colorsValue = document.getElementById("colors-slider").value;
-  let lightingValue = document.getElementById("lighting-slider").value;
-  let qualityValue = document.getElementById("quality-slider").value;
-
-  finalPrompt.innerHTML = promptText + "::" + " styles:" + stylesValue + " artists:" + artistsValue + " colors:" + colorsValue + " lighting:" + lightingValue + " quality:" + qualityValue;
-}
